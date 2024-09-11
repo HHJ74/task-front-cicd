@@ -23,9 +23,9 @@ jobs:
       - name: Sign in to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
-        run: docker build -t gpgus0704/task-frontend-cicd .
+        run: docker build -t gpgus0704/task-front-cicd .
       - name: Push Docker Image
-        run: docker push gpgus0704/task-frontend-cicd:latest
+        run: docker push gpgus0704/task-front-cicd:latest
 
 
   deploy:
@@ -38,4 +38,4 @@ jobs:
       - name: Delete existing container
         run: docker rm -f reactContainer
       - name: Run container
-        run: docker run -d -p 80:80 --name reactContainer gpgus0704/task-frontend-cicd
+        run: docker run -d -p 80:80 --name reactContainer gpgus0704/task-front-cicd
