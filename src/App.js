@@ -13,6 +13,7 @@ import Proceeding from './components/Proceeding';
 // deploy test code 6
 
 function App() {
+  console.log("test")
   return (
     <BrowserRouter>
       <div className="App">
