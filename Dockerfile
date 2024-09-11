@@ -9,7 +9,7 @@ RUN npm run build
 # Production stage (nginx로 배포)
 FROM nginx:1.23-alpine
 WORKDIR /usr/share/nginx/html
-RUN rm -rf ./*
+RUN rm -rf *
 COPY --from=build /app/build .   
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
